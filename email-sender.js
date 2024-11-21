@@ -1,27 +1,23 @@
-// email-sender.js
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
-// Create a transporter using your email service credentials
-const transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-email-password'  // For Gmail, you may need to use an app password.
+    user: 'karouiseh@gmail.com',
+    pass: 'hegufe12@'
   }
 });
 
-// Set up email data
-const mailOptions = {
-  from: 'your-email@gmail.com',
-  to: 'recipient-email@example.com',
-  subject: 'Test Email from Node.js',
-  text: 'Hello, this is a test email sent using Node.js and nodemailer!'
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
 };
 
-// Send the email
-transporter.sendMail(mailOptions, (error, info) => {
+transporter.sendMail(mailOptions, function(error, info){
   if (error) {
-    console.log('Error:', error);
+    console.log(error);
   } else {
     console.log('Email sent: ' + info.response);
   }
